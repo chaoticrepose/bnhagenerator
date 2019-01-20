@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BNHA Character randomizer</title>
+</head>
+<body >
+	<font size="5" face="Comic Sans MS" >
+	<hl>My Hero Academia Character Randomizer</hl>
+	<header>
+		<font size="3">
+	<p>Hey Lad, Thanks for checking this out for me! </p>
+	<p>I got bored and didn't know what to draw so i drew up this nifty lil' program to give me ideas. </p>
+	<p>There should be 58 characters, including hero costumes, heroes, UA Staff, and villains, making for a total of 3,364 different pair combos possible!
+	But, if you notice a character is missing, just email me and I can get right to it! It's not too hard to add things to the generator, so feel free!</p>
+</font>
+</header>
+
+	<div></div>
+<div style="display: inline-block">
+	<div id="CharacterDisplay">
+		<!-- Character will display here -->
+	</div>
+</div>
+<div style="display: inline-block">
+	<div id="personDisplay">
+		<!-- person will display here -->
+	</div>
+</div>
+
+
+<div></div>
+	<button onclick="newCharacter()">New Character</button>
+		<button onclick="newperson()">Second Character</button>
+
+<div></div>
+<div>
+	<font size = "4" color = "Vermillion">
+		<p> If a blank space shows up, give it a minute to load. If it persists, or the word "Undefined" shows up, click the button again to refresh it. 
+			I'm still working through a few kinks here and there, but it's functional and otherwise, runs smoothly. 
+		If you notice any other bugs, just text me or lemme know. Thanks, lad! </p>
+	</font>
+	<font size = "2">
+		<p><i>copyright Kaitlyn LaScala, January 2019</i></p>
+	</font>
+</div>
+
+	<script>
+		var character = []
+	index = 0;
+
+	character[1] = "<a href = 'AllMight'><img src= 'http://i66.tinypic.com/a48sxj.jpg' alt= 'AllMight'></a>";
+	character[2] = "<a href = 'DabiVillain'><img src= 'http://i66.tinypic.com/s6it0l.jpg' alt= 'DabiVillain'></a>";
+	character[3] = "<a href = 'Dabi'><img src= 'http://i64.tinypic.com/23lbpza.jpg' alt= 'Dabi'></a>";
+	character[4] = "<a href = 'DenkiHero'><img src= 'http://i63.tinypic.com/b4j5t4.jpg' alt= 'DenkiHero'></a>";
+	character[5] = "<a href = 'Denki'><img src= 'http://i65.tinypic.com/24y749e.jpg' alt= 'Denki'></a>";
+	character[6] = "<a href = 'KirishimaHero'><img src= 'http://i64.tinypic.com/15gca3l.jpg' alt= 'KirishimaHero'></a>";
+	character[7] = "<a href = 'Kirishima'><img src= 'http://i66.tinypic.com/2z8yo85.jpg' alt= 'Kirishima'></a>";
+	character[8] = "<a href = 'Eri'><img src= 'http://i63.tinypic.com/4t6mpg.jpg' alt= 'Eri'></a>";
+	character[9] = "<a href = 'TokoyamiHero'><img src= 'http://i66.tinypic.com/2ywsp03.jpg' alt= 'TokoyamiHero'></a>";
+	character[10] = "<a href = 'Tokoyami'><img src= 'http://i66.tinypic.com/2mc7qe1.jpg' alt= 'Tokoyami'></a>";
+	character[11]= "<a href = 'GranTorino><img src= 'http://i67.tinypic.com/x1lpg9.jpg' alt= 'GranTorino'></a>";
+	character[12] = "<a href = 'SeroHero'><img src= 'http://i65.tinypic.com/29azcs2.jpg' alt= 'SeroHero'></a>";
+	character[13] = "<a href = 'Sero'><img src= 'http://i63.tinypic.com/fejng4.jpg' alt= 'Sero'></a>";
+	character[14] = "<a href = 'TogaVillain'><img src= 'http://i64.tinypic.com/2li99vm.jpg' alt= 'TogaVillain'></a>";
+	character[15] = "<a href = 'Toga'><img src= 'http://i65.tinypic.com/2yw6zj4.jpg' alt= 'Toga'></a>";
+	character[16] = "<a href = 'Shinso1'><img src= 'http://i67.tinypic.com/15dkwt0.jpg' alt= 'Shinso1'></a>";
+	character[17] = "<a href = 'Shinso2'><img src= 'http://i63.tinypic.com/hvz0nq.jpg' alt= 'Shinso2'></a>";
+	character[18] = "<a href = 'Shinso3'><img src= 'http://i64.tinypic.com/imm3bk.jpg' alt= 'Shinso3'></a>";
+	character[19] = "<a href = 'Hizashi'><img src= 'http://i65.tinypic.com/214qqug.jpg' alt= 'Hizashi'></a>";
+	character[20] = "<a href = 'Shiozaki'><img src= 'http://i67.tinypic.com/vsf3pj.jpg' alt= 'Shiozaki'></a>";
+	character[21] = "<a href = 'Inko'><img src= 'http://i67.tinypic.com/2mzy0cm.jpg' alt= 'Inko'></a>";
+	character[22] = "<a href = 'Kendo'><img src= 'http://i67.tinypic.com/2ilhvkk.jpg' alt= 'Kendo'></a>";
+	character[23] = "<a href = 'KendoHero'><img src= 'http://i64.tinypic.com/m6kg9.jpg' alt= 'KendoHero'></a>";
+	character[24] = "<a href = 'MidoriyaHero'><img src= 'http://i65.tinypic.com/2eaigs6.jpg' alt= 'MidoriyaHero'></a>";
+	character[25] = "<a href = 'Midoriya'><img src= 'http://i66.tinypic.com/4rrfrl.jpg' alt= 'Midoriya'></a>";
+	character[26] = "<a href = 'BakugoHero'><img src= 'http://i66.tinypic.com/6ehw6t.jpg' alt= 'BakugoHero'></a>";
+	character[27] = "<a href = 'Bakugo'><img src= 'http://i68.tinypic.com/2vubq5d.jpg' alt= 'Bakugo'></a>";
+	character[28] = "<a href = 'Kurogiri'><img src= 'http://i66.tinypic.com/9hrjt1.jpg' alt= 'Kurogiri'></a>";
+	character[29] = "<a href = 'JiroHero'><img src= 'http://i63.tinypic.com/hwbx9d.jpg' alt= 'JiroHero'></a>";
+	character[30] = "<a href = 'Jiro'><img src= 'http://i65.tinypic.com/hs3yu1.jpg' alt= 'Jiro'></a>";
+	character[31] = "<a href = 'Mei'><img src= 'http://i63.tinypic.com/10fqqs4.jpg' alt= 'Mei'></a>";
+	character[32] = "<a href = 'Shoji'><img src= 'http://i67.tinypic.com/2wfrcxj.jpg' alt= 'Shoji'></a>";
+	character[33] = "<a href = 'MinaHero'><img src= 'http://i68.tinypic.com/33dfw3d.jpg' alt= 'MinaHero'></a>";
+	character[34] = "<a href = 'Mina'><img src= 'http://i67.tinypic.com/2q3btk3.jpg' alt= 'Mina'></a>";
+	character[35] = "<a href = 'MomoHero'><img src= 'http://i66.tinypic.com/6ohnbb.jpg' alt= 'MomoHero'></a>";
+	character[36] = "<a href = 'Momo'><img src= 'http://i66.tinypic.com/ztu0cy.jpg' alt= 'Momo'></a>";
+	character[37] = "<a href = 'Compress'><img src= 'http://i68.tinypic.com/2l9ih36.jpg' alt= 'Compress'></a>";
+	character[38] = "<a href = 'MonomaHero'><img src= 'http://i68.tinypic.com/2ptv40g.jpg' alt= 'MonomaHero'></a>";
+	character[39] = "<a href = 'Monoma'><img src= 'http://i65.tinypic.com/167mctv.jpg' alt= 'Monoma'></a>";
+	character[40] = "<a href = 'NejireHero'><img src= 'http://i63.tinypic.com/2qdsv2r.jpg' alt= 'NejireHero'></a>";
+	character[41] = "<a href = 'Nejire'><img src= 'http://i68.tinypic.com/jh55sg.jpg' alt= 'Nejire'></a>";
+	character[42] = "<a href = 'OchacoHero'><img src= 'http://i66.tinypic.com/34sfbc0.jpg' alt= 'OchacoHero'></a>";
+	character[43] = "<a href = 'Ochaco'><img src= 'http://i67.tinypic.com/35kps83.jpg' alt= 'Ochaco'></a>";
+	character[44] = "<a href = 'Overhaul'><img src= 'http://i65.tinypic.com/2ev4zvd.jpg' alt= 'Overhaul'></a>";
+	character[45] = "<a href = 'Mic'><img src= 'http://i68.tinypic.com/2njddnn.jpg' alt= 'Mic'></a>";
+	character[46] = "<a href = 'Aizawa'><img src= 'http://i68.tinypic.com/indhjc.jpg' alt= 'Aizawa'></a>";
+	character[47] = "<a href = 'TodorokiHero'><img src= 'http://i68.tinypic.com/2u5ufkg.jpg' alt= 'TodorokiHero'></a>";
+	character[48] = "<a href = 'Todoroki'><img src= 'http://i64.tinypic.com/2lk7ix0.jpg' alt= 'Todoroki'></a>";
+	character[49] = "<a href = 'IidaHero'><img src= 'http://i66.tinypic.com/21lquew.jpg' alt= 'IidaHero'></a>";
+	character[50] = "<a href = 'Iida'><img src= 'http://i63.tinypic.com/25qf1oh.jpg' alt= 'Iida'></a>";
+	character[51] = "<a href = 'TetsutetsuHero'><img src= 'http://i65.tinypic.com/21ieh.jpg' alt= 'TetsutetsuHero'></a>";
+	character[52] = "<a href = 'Tetsutetsu'><img src= 'http://i68.tinypic.com/1zz6li0.jpg' alt= 'Tetsutetsu'></a>";
+	character[53] = "<a href = 'Shigaraki'><img src= 'http://i64.tinypic.com/34dk16u.jpg' alt= 'Shigaraki'></a>";
+	character[54] = "<a href = 'Toshinori'><img src= 'http://i63.tinypic.com/dyu6h4.jpg' alt= 'Toshinori'></a>";
+	character[55] = "<a href = 'TsuHero'><img src= 'http://i68.tinypic.com/200proi.jpg' alt= 'TsuHero'></a>";
+	character[56] = "<a href = 'Tsu'><img src= 'http://i66.tinypic.com/2ivjmzo.jpg' alt= 'Tsu'></a>";
+	character[57] = "<a href = 'AoyamaHero'><img src= 'http://i66.tinypic.com/24ys17t.jpg' alt= 'AoyamaHero'></a>";
+	character[58] = "<a href = 'Aoyama'><img src= 'http://i66.tinypic.com/20z5h1h.jpg' alt= 'Aoyama'></a>";
+	character[59] = "<a href = 'Amajiki'><img src= 'http://i64.tinypic.com/24n1qmp.jpg' alt= amajiki'></a>";
+
+function newCharacter() {
+	var randomNumber = Math.floor(Math.random() * (character.length));
+	document.getElementById('CharacterDisplay') .innerHTML = character[randomNumber];
+}
+	</script>
+</font>
+</body>
+
+<head>
+	<title>BNHA Character randomizer</title>
+</head>
+<body >
+	<script>
+		var person = []
+	index = 1;
+
+	person[1] = "<a href = 'AllMight'><img src= 'http://i66.tinypic.com/a48sxj.jpg' alt= 'AllMight'></a>";
+	person[2] = "<a href = 'DabiVillain'><img src= 'http://i66.tinypic.com/s6it0l.jpg' alt= 'DabiVillain'></a>";
+	person[3] = "<a href = 'Dabi'><img src= 'http://i64.tinypic.com/23lbpza.jpg' alt= 'Dabi'></a>";
+	person[4] = "<a href = 'DenkiHero'><img src= 'http://i63.tinypic.com/b4j5t4.jpg' alt= 'DenkiHero'></a>";
+	person[5] = "<a href = 'Denki'><img src= 'http://i65.tinypic.com/24y749e.jpg' alt= 'Denki'></a>";
+	person[6] = "<a href = 'KirishimaHero'><img src= 'http://i64.tinypic.com/15gca3l.jpg' alt= 'KirishimaHero'></a>";
+	person[7] = "<a href = 'Kirishima'><img src= 'http://i66.tinypic.com/2z8yo85.jpg' alt= 'Kirishima'></a>";
+	person[8] = "<a href = 'Eri'><img src= 'http://i63.tinypic.com/4t6mpg.jpg' alt= 'Eri'></a>";
+	person[9] = "<a href = 'TokoyamiHero'><img src= 'http://i66.tinypic.com/2ywsp03.jpg' alt= 'TokoyamiHero'></a>";
+	person[10] = "<a href = 'Tokoyami'><img src= 'http://i66.tinypic.com/2mc7qe1.jpg' alt= 'Tokoyami'></a>";
+	person[11]= "<a href = 'GranTorino><img src= 'http://i67.tinypic.com/x1lpg9.jpg' alt= 'GranTorino'></a>";
+	person[12] = "<a href = 'SeroHero'><img src= 'http://i65.tinypic.com/29azcs2.jpg' alt= 'SeroHero'></a>";
+	person[13] = "<a href = 'Sero'><img src= 'http://i63.tinypic.com/fejng4.jpg' alt= 'Sero'></a>";
+	person[14] = "<a href = 'TogaVillain'><img src= 'http://i64.tinypic.com/2li99vm.jpg' alt= 'TogaVillain'></a>";
+	person[15] = "<a href = 'Toga'><img src= 'http://i65.tinypic.com/2yw6zj4.jpg' alt= 'Toga'></a>";
+	person[16] = "<a href = 'Shinso1'><img src= 'http://i67.tinypic.com/15dkwt0.jpg' alt= 'Shinso1'></a>";
+	person[17] = "<a href = 'Shinso2'><img src= 'http://i63.tinypic.com/hvz0nq.jpg' alt= 'Shinso2'></a>";
+	person[18] = "<a href = 'Shinso3'><img src= 'http://i64.tinypic.com/imm3bk.jpg' alt= 'Shinso3'></a>";
+	person[19] = "<a href = 'Hizashi'><img src= 'http://i65.tinypic.com/214qqug.jpg' alt= 'Hizashi'></a>";
+	person[20] = "<a href = 'Shiozaki'><img src= 'http://i67.tinypic.com/vsf3pj.jpg' alt= 'Shiozaki'></a>";
+	person[21] = "<a href = 'Inko'><img src= 'http://i67.tinypic.com/2mzy0cm.jpg' alt= 'Inko'></a>";
+	person[22] = "<a href = 'Kendo'><img src= 'http://i67.tinypic.com/2ilhvkk.jpg' alt= 'Kendo'></a>";
+	person[23] = "<a href = 'KendoHero'><img src= 'http://i64.tinypic.com/m6kg9.jpg' alt= 'KendoHero'></a>";
+	person[24] = "<a href = 'MidoriyaHero'><img src= 'http://i65.tinypic.com/2eaigs6.jpg' alt= 'MidoriyaHero'></a>";
+	person[25] = "<a href = 'Midoriya'><img src= 'http://i66.tinypic.com/4rrfrl.jpg' alt= 'Midoriya'></a>";
+	person[26] = "<a href = 'BakugoHero'><img src= 'http://i66.tinypic.com/6ehw6t.jpg' alt= 'BakugoHero'></a>";
+	person[27] = "<a href = 'Bakugo'><img src= 'http://i68.tinypic.com/2vubq5d.jpg' alt= 'Bakugo'></a>";
+	person[28] = "<a href = 'Kurogiri'><img src= 'http://i66.tinypic.com/9hrjt1.jpg' alt= 'Kurogiri'></a>";
+	person[29] = "<a href = 'JiroHero'><img src= 'http://i63.tinypic.com/hwbx9d.jpg' alt= 'JiroHero'></a>";
+	person[30] = "<a href = 'Jiro'><img src= 'http://i65.tinypic.com/hs3yu1.jpg' alt= 'Jiro'></a>";
+	person[31] = "<a href = 'Mei'><img src= 'http://i63.tinypic.com/10fqqs4.jpg' alt= 'Mei'></a>";
+	person[32] = "<a href = 'Shoji'><img src= 'http://i67.tinypic.com/2wfrcxj.jpg' alt= 'Shoji'></a>";
+	person[33] = "<a href = 'MinaHero'><img src= 'http://i68.tinypic.com/33dfw3d.jpg' alt= 'MinaHero'></a>";
+	person[34] = "<a href = 'Mina'><img src= 'http://i67.tinypic.com/2q3btk3.jpg' alt= 'Mina'></a>";
+	person[35] = "<a href = 'MomoHero'><img src= 'http://i66.tinypic.com/6ohnbb.jpg' alt= 'MomoHero'></a>";
+	person[36] = "<a href = 'Momo'><img src= 'http://i66.tinypic.com/ztu0cy.jpg' alt= 'Momo'></a>";
+	person[37] = "<a href = 'Compress'><img src= 'http://i68.tinypic.com/2l9ih36.jpg' alt= 'Compress'></a>";
+	person[38] = "<a href = 'MonomaHero'><img src= 'http://i68.tinypic.com/2ptv40g.jpg' alt= 'MonomaHero'></a>";
+	person[39] = "<a href = 'Monoma'><img src= 'http://i65.tinypic.com/167mctv.jpg' alt= 'Monoma'></a>";
+	person[40] = "<a href = 'NejireHero'><img src= 'http://i63.tinypic.com/2qdsv2r.jpg' alt= 'NejireHero'></a>";
+	person[41] = "<a href = 'Nejire'><img src= 'http://i68.tinypic.com/jh55sg.jpg' alt= 'Nejire'></a>";
+	person[42] = "<a href = 'OchacoHero'><img src= 'http://i66.tinypic.com/34sfbc0.jpg' alt= 'OchacoHero'></a>";
+	person[43] = "<a href = 'Ochaco'><img src= 'http://i67.tinypic.com/35kps83.jpg' alt= 'Ochaco'></a>";
+	person[44] = "<a href = 'Overhaul'><img src= 'http://i65.tinypic.com/2ev4zvd.jpg' alt= 'Overhaul'></a>";
+	person[45] = "<a href = 'Mic'><img src= 'http://i68.tinypic.com/2njddnn.jpg' alt= 'Mic'></a>";
+	person[46] = "<a href = 'Aizawa'><img src= 'http://i68.tinypic.com/indhjc.jpg' alt= 'Aizawa'></a>";
+	person[47] = "<a href = 'TodorokiHero'><img src= 'http://i68.tinypic.com/2u5ufkg.jpg' alt= 'TodorokiHero'></a>";
+	person[48] = "<a href = 'Todoroki'><img src= 'http://i64.tinypic.com/2lk7ix0.jpg' alt= 'Todoroki'></a>";
+	person[49] = "<a href = 'IidaHero'><img src= 'http://i66.tinypic.com/21lquew.jpg' alt= 'IidaHero'></a>";
+	person[50] = "<a href = 'Iida'><img src= 'http://i63.tinypic.com/25qf1oh.jpg' alt= 'Iida'></a>";
+	person[51] = "<a href = 'TetsutetsuHero'><img src= 'http://i65.tinypic.com/21ieh.jpg' alt= 'TetsutetsuHero'></a>";
+	person[52] = "<a href = 'Tetsutetsu'><img src= 'http://i68.tinypic.com/1zz6li0.jpg' alt= 'Tetsutetsu'></a>";
+	person[53] = "<a href = 'Shigaraki'><img src= 'http://i64.tinypic.com/34dk16u.jpg' alt= 'Shigaraki'></a>";
+	person[54] = "<a href = 'Toshinori'><img src= 'http://i63.tinypic.com/dyu6h4.jpg' alt= 'Toshinori'></a>";
+	person[55] = "<a href = 'TsuHero'><img src= 'http://i68.tinypic.com/200proi.jpg' alt= 'TsuHero'></a>";
+	person[56] = "<a href = 'Tsu'><img src= 'http://i66.tinypic.com/2ivjmzo.jpg' alt= 'Tsu'></a>";
+	person[57] = "<a href = 'AoyamaHero'><img src= 'http://i66.tinypic.com/24ys17t.jpg' alt= 'AoyamaHero'></a>";
+	person[58] = "<a href = 'Aoyama'><img src= 'http://i66.tinypic.com/20z5h1h.jpg' alt= 'Aoyama'></a>";
+	person[59] = "<a href = 'Amajiki'><img src= 'http://i64.tinypic.com/24n1qmp.jpg' alt= amajiki'></a>";
+
+function newperson() {
+	var randomNumber = Math.floor(Math.random() * (person.length));
+	document.getElementById('personDisplay') .innerHTML = person[randomNumber];
+}
+	</script>
+	<div></div>
+	<div></div>
+</font>
+</body>
+
